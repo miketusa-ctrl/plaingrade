@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.workers.mike-tusa.plaingrade-api/plaingrade-api",
+  "title": "PlainGrade",
+  "description": "English readability scores (Flesch, Flesch-Kincaid, Fog, SMOG) and text stats. Text never stored.",
+  "version": "0.5.0",
+  "websiteUrl": "https://plaingrade-api.mike-tusa.workers.dev/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://plaingrade-api.mike-tusa.workers.dev/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. 'Bearer <key>': a free key (POST /v1/keys) or a PlainGrade Pro license key (PGPR-..., $5/mo via Polar) for higher limits. Works without a key.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
