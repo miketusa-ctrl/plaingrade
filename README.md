@@ -12,13 +12,26 @@ English readability scores (Flesch, Flesch-Kincaid, Fog, SMOG) and text stats. T
 
 PlainGrade is a remote MCP server (Streamable HTTP) at `https://plaingrade-api.mike-tusa.workers.dev/mcp`. Tools: `score_readability`.
 
-Cursor, Cline and Windsurf accept this config:
+Cursor and Windsurf accept this config:
 
 ```json
 {
   "mcpServers": {
     "plaingrade": {
       "type": "http",
+      "url": "https://plaingrade-api.mike-tusa.workers.dev/mcp"
+    }
+  }
+}
+```
+
+Cline (MCP Servers > Remote Servers, or `cline_mcp_settings.json`) needs `"type": "streamableHttp"`:
+
+```json
+{
+  "mcpServers": {
+    "plaingrade": {
+      "type": "streamableHttp",
       "url": "https://plaingrade-api.mike-tusa.workers.dev/mcp"
     }
   }
